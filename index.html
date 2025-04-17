@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>FGTQ Dashboard</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER WITH LOGO + HAMBURGER -->
+  <header>
+    <img src="logo.png" alt="FGTQ Logo" class="logo" />
+    <button id="menu-btn" class="menu-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- COLLAPSIBLE NAV -->
+  <nav id="menu" class="menu">
+    <a href="index.html">Dashboard</a>
+    <a href="login.html">Logout</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- SETUP LIMITS VIEW -->
+    <section id="setup-section" class="card">
+      <h2>Temperature</h2>
+      <div class="input-group">
+        <label for="temp-from">From:</label>
+        <input id="temp-from" type="number" min="0" max="100" />
+        <span>°C</span>
+      </div>
+      <div class="input-group">
+        <label for="temp-to">To:</label>
+        <input id="temp-to" type="number" min="0" max="100" />
+        <span>°C</span>
+      </div>
+      <button id="set-temp">Set</button>
+
+      <h2>Humidity</h2>
+      <div class="input-group">
+        <label for="hum-from">From:</label>
+        <input id="hum-from" type="number" min="0" max="100" />
+        <span>%</span>
+      </div>
+      <div class="input-group">
+        <label for="hum-to">To:</label>
+        <input id="hum-to" type="number" min="0" max="100" />
+        <span>%</span>
+      </div>
+      <button id="set-hum">Set</button>
+    </section>
+
+    <!-- CURRENT READINGS VIEW -->
+    <section id="display-section" class="card hidden">
+      <h2>Temperature</h2>
+      <p>
+        The Current Temperature is:
+        <strong id="current-temp">--</strong>°C
+      </p>
+      <h2>Humidity</h2>
+      <p>
+        The Current Humidity is:
+        <strong id="current-hum">--</strong>%
+      </p>
+      <button id="edit-settings">Edit Settings</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
